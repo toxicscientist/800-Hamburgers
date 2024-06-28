@@ -1,0 +1,12 @@
+*{
+    font-family: monospace;
+    font-size: large;
+    transition: all;
+    transition-duration: 2s;
+}
+
+#imperial{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
