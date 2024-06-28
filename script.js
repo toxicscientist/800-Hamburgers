@@ -89,7 +89,7 @@ var normalisations = {
     speed: ['m/s', 'km/h', 'ft/s', 'mph', 'Knots', 'C', 'Percent C', 'Mach'],
     force: ['Newtons', 'Kilonewtons', 'Dynes'],
     acceleration: ['Newtons', 'Kilonewtons', 'Dynes'],
-    //time, temperature, energy, density, pressure
+    //pressure
 } */
 
 var units = {}
@@ -102,7 +102,7 @@ Object.keys(units).forEach(e => {
     measurements.push(toTitleCase(e))
 });
 
-var comparisons = {
+var comparisons = { // Unless stated otherwise, assume all values to come from the Order of Magnitude pages on Wikipedia
     mass: {
         "maize pollen grains": 2.5e-10, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)
         "grains of sand": 2.5e-6,
@@ -150,8 +150,10 @@ var comparisons = {
         "adult male humans": 1.7526, // https://www.medicinenet.com/height_men/article.htm
         "adult male crocodiles": 3.4, // https://nationalzoo.si.edu/animals/american-alligator
         "times the height of the Statue of Liberty": 93.47, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
-        "football fields": 105,
+        "American football fields": 105,
+        "rugby league pitches": 122,
         "Mount Everest's": 8848,
+        "times the distance that one is 'within earshot'": 9986,
         "Marathons": 42195,
         "times the diameter of the Moon": 3.48e+6,
         "times the length of the Great Wall of China": 6.4e+6,
@@ -231,6 +233,7 @@ var comparisons = {
         "times the speed of the fastest crossbow arrow.": 154,
         "times the speed of a typical .22 LR bullet": 320,
         "times the speed of sound(Mach)": 340.3,
+        "times the speed of Sonic the Hedgehog": 342.88, // https://www.thegamer.com/sonic-how-fast-running-speeds/
         "times the speed of Earth's rotation at the equator": 464,
         "times the speed of a bullet of a heavy machine gun": 800,
         "times the orbital velocity of the Moon around Earth.": 1022,
@@ -264,6 +267,7 @@ var comparisons = {
         "Red blood cells": 1e-10,
         "pixels": 5.5e-8,
         "pinheads": 2e-6,
+        "times the surface area of an ant": 4.87e-5, // https://physics.stackexchange.com/a/153552
         "U.S. pennies": 2.9e-4,
         "credit cards": 4.6e-3,
         "Index cards": 1e-2,
