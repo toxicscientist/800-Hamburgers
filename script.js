@@ -81,17 +81,6 @@ var normalisations = {
     }, */
 }
 
-/* var units = {
-    mass: ['Kilograms', 'Grams', 'Tonnes', 'Pounds', 'Ounce'],
-    length: ['Meters', 'Centimeters', 'Inches', 'Feet', 'Miles', 'Nautical Miles', 'Yards'],
-    volume: ['Cubic Meters', 'Litres', 'US Gallons', 'US Pints', 'Cubic Centimeters'],
-    power: ['Watt', 'Kilowatt', 'Horsepower'],
-    speed: ['m/s', 'km/h', 'ft/s', 'mph', 'Knots', 'C', 'Percent C', 'Mach'],
-    force: ['Newtons', 'Kilonewtons', 'Dynes'],
-    acceleration: ['Newtons', 'Kilonewtons', 'Dynes'],
-    //pressure
-} */
-
 var units = {}
 Object.keys(normalisations).forEach(e => {
     units[e] = (Object.keys(normalisations[e]).map(e => toTitleCase(e.replaceAll('_', ' '))))
@@ -102,7 +91,7 @@ Object.keys(units).forEach(e => {
     measurements.push(toTitleCase(e))
 });
 
-var comparisons = { // Unless stated otherwise, assume all values to come from the Order of Magnitude pages on Wikipedia
+var comparisons = { // Unless stated otherwise, assume all values to come from the Order of Magnitude pages on Wikipedia for the unit in question; where a range is given, the median is chosen
     mass: {
         "maize pollen grains": 2.5e-10, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)
         "grains of sand": 2.5e-6,
@@ -113,6 +102,7 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "ostrich eggs": 1.36, // https://nationalzoo.si.edu/animals/news/how-fast-ostrich-and-more-fun-facts
         "newborn babies": 3.2, // https://www.urmc.rochester.edu/encyclopedia/content.aspx?contenttypeid=90&contentid=P02673
         "cats": 4.5, // https://en.wikipedia.org/wiki/Cat
+        "eggs": 49.61, // https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table#17
         "adult human males": 70, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)
         "dairy cows": 750, // https://eol.org/pages/328699/data?predicate_id=1456
         "small cars": 1200, // https://www.consumeraffairs.com/automotive/average-car-weight.html
@@ -130,30 +120,39 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "Plutos": 1.3e+22,
         "Moons": 7.3e+22,
         "Earths": 6.0e+24,
-        "jupiters": 1.9e+27, // https://en.wikipedia.org/wiki/List_of_unusual_units_of_measurement#Jupiter
-        "suns": 2e+30, // https://en.wikipedia.org/wiki/Solar_mass
+        "Jupiters": 1.9e+27, // https://en.wikipedia.org/wiki/List_of_unusual_units_of_measurement#Jupiter
+        "Suns": 2e+30, // https://en.wikipedia.org/wiki/Solar_mass
         "Milky Way galaxies": 1.2e+42, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)
-        "cubic parsecs of water": 2.94e+55,
         "times the mass of the observable universe": 4.4506e+52,
+        "cubic parsecs of water": 2.94e+55,
     },
     length: {
         "Hydrogen atoms": 5.3e-11, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
         "water molecules": 2.8e-8,
         "bacteria": 2e-6,
         "red blood cells": 7e-6,
+        "<a href='https://en.wikipedia.org/wiki/Twip'>twips</a>": 1.764e-5, // https://en.wikipedia.org/wiki/Twip
         "times the width of a human hair strand": 0.0001, // https://www.columbiatribune.com/story/lifestyle/family/2016/08/10/q-how-thin-is-human/21830395007/
-        "pinhead diameters": 0.001, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
+        "salt grains": 0.0003, // https://scaleofuniverse.com/en/universe/grain-of-salt
         "pixels": 0.00034,
+        "pinhead diameters": 0.001, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
+        "ants": 0.001, // http://hockley.co.uk/insect-pests/black-ant-garden-ant/black-ant-garden-ant/
+        "grains of rice": 0.006, // https://www.fao.org/4/t0567e/T0567E07.htm
+        "peas": 0.00938, // https://www.ijpab.com/form/2018%20Volume%206,%20issue%201/IJPAB-2018-6-1-573-579.pdf
+        "marbles": 0.013, // https://en.wikipedia.org/wiki/Marble_(toy)
+        "times the width of an adult finger": 0.02,
+        "matchsticks": 0.043, // https://scaleofuniverse.com/en/universe/matchstick
+        "AA batteries": 0.05, // https://en.wikipedia.org/wiki/AA_battery
         "bananas": 0.19, // https://worldmetrics.org/average-length-of-a-banana-statistics/
-        "times the width of an adult finger": 0.2, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
         "washing machines": 0.8,
         "adult male humans": 1.7526, // https://www.medicinenet.com/height_men/article.htm
         "adult male crocodiles": 3.4, // https://nationalzoo.si.edu/animals/american-alligator
+        "t-rexes": 12.35, // https://en.wikipedia.org/wiki/Tyrannosaurus
+        "blue whales": 30, // https://en.wikipedia.org/wiki/Blue_whale
         "times the height of the Statue of Liberty": 93.47, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
         "American football fields": 105,
         "rugby league pitches": 122,
-        "Mount Everest's": 8848,
-        "times the distance that one is 'within earshot'": 9986,
+        "Mount Everests": 8848,
         "Marathons": 42195,
         "times the diameter of the Moon": 3.48e+6,
         "times the length of the Great Wall of China": 6.4e+6,
@@ -162,7 +161,7 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "times the diameter of the Sun": 1.39e+9,
         "light minutes": 1.8e+10,
         "Astronomical Units": 1.5e+11,
-        "times the diameter of the Moon": 3480000,
+        "light years": 9.4607e+15, // https://en.wikipedia.org/wiki/Light-year
         "parsecs": 3.086e+16, // https://en.wikipedia.org/wiki/Parsec
         "times the distance to Andromeda Galaxy": 2.4e+22, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
         "megaparsecs": 3.1e+22, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
@@ -180,7 +179,7 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "times the total volume of male adult human lungs": 6e-3,
         "times the volume of a human body": 7.1e-2,
         "oil barrels": 1.59e-1,
-        "butt(an old unit for beer and wine)": 4.8e-1,
+        "butts(an old unit for beer and wine)": 4.8e-1,
         "Olympic-sized swimming pools": 2.5e+3,
         "times the gas in the Hindenburg zeppelin": 2.12e+5,
         "sydharbs — Volume of Sydney Harbour, Australia": 5e+8,
@@ -276,6 +275,7 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "basketballs": 1.8e-1,
         "A1 papers": 5e-1,
         "times the skin on the human body": 1.73,
+        "one-bedroom apartments": 51, // https://tkpg.co.uk/news/average-size-of-one-bed-apartment-manchester/
         "volleyball courts": 162,
         "NBA basketball courts": 437,
         "acres": 4047,
@@ -285,11 +285,12 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "Vatican Cities": 4.9e+5,
         "Pentagons": 6e+5,
         "Monaco's": 2e+6,
+        "Central Parks": 3.41e+6, // https://en.wikipedia.org/wiki/Central_Park
         "Walt Disney Worlds": 1.1e+8,
         "Hong Kongs": 1.1e+9,
         "Lake Victorias": 6.89e+10,
         "Spains": 5.1e+11,
-        "Roman Empires(at it's largest)": 5e+12,
+        "Roman Empires(at its largest)": 5e+12,
         "times the arable land on Earth": 1.4e+13,
         "Plutos": 1.66e+13,
         "Africas": 3e+13,
@@ -326,7 +327,6 @@ function measurementChanged(){
 measurementChanged()
 
 function updateComparison(){
-    // document.getElementById('imperial').innerHTML = (document.getElementById('magnitude').value * normalisations[document.getElementById('measurement').value.toLowerCase()][document.getElementById('unit').value.toLowerCase()])
     var measurement = document.getElementById('measurement').value.toLowerCase()
     var unit = document.getElementById('unit').value.toLowerCase()
     var normal = document.getElementById('magnitude').value * normalisations[measurement][unit]
@@ -334,20 +334,23 @@ function updateComparison(){
     Object.keys(comparisons[measurement]).forEach((e) => {
         var val = toPlaces((normal / comparisons[measurement][e]), 2)
         var hide;
-        if (val == 0 || val > 1e+200) {
+        if (val == 0 || val > 1e+100) {
             hide = true
         }
         if(val > 1000000 || ((val.toExponential(2).split('-')[1]) > 5)){
             val = val.toExponential(2)
         }
-        if(!hide)comparisonList.push(`${val.toLocaleString().replace('e', 'x10^').replace('+', '')} ${e}`)
+        if (!hide) comparisonList.push(`<span style='font-weight: 600'>${val.toLocaleString().replace('e', '×10^').replace('+', '')}</span> ${e}`)
     })
     if(comparisonList.length > 0){
-        document.getElementById('imperial').innerHTML = `<div class="comparison">${comparisonList.join('</div><div class="comparison">')}</div>`
+        document.getElementById('imperial').innerHTML = `<div class="comparison">${comparisonList.join('</div> <div class="comparison">')}</div>`
     } else {
         var nothing = ['A whole lotta nothing', 'Nothin\' here but us chickens', 'Nada']
         document.getElementById('imperial').innerHTML = `<div class="comparison">${nothing[Math.floor(Math.random() * nothing.length)]}</div>`
     }
 }
 
+document.getElementById('magnitude').value = Math.floor(Math.random() * 10)
+document.getElementById('measurement').value = measurements[Math.floor(Math.random() * measurements.length)]
+measurementChanged()
 updateComparison()

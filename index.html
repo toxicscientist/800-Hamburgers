@@ -7,9 +7,13 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <select id="measurement" onchange="measurementChanged()"></select>
-    <input type="number" id="magnitude" oninput="updateComparison()"></input>
-    <select id="unit" onchange="updateComparison()"></select>
+    <div id="values">
+        <select id="measurement" onchange="measurementChanged()"></select>
+        <p />
+        <input type="number" id="magnitude" oninput="updateComparison()"></input>
+        <select id="unit" onchange="updateComparison()"></select>
+    </div>
+    <hr>
     <div id="imperial"></div>
 </body>
 <script defer="true" src="./script.js"></script>

@@ -1,12 +1,37 @@
 *{
     font-family: monospace;
     font-size: large;
-    transition: all;
-    transition-duration: 2s;
+    background-color: #ffc21c;
+    transition-duration: 1s;
+}
+
+#imperial, #values{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 #imperial{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    width: 100%
+}
+
+.comparison{
+    width: 30%;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding-bottom: 1%;
+}
+
+hr {
+    width: 80%;
+    border-width: 1px;
+    border-color: black;
+}
+
+input, select{
+    background-color: #ffffff88;
+    outline: none;
+    border: none;
 }
