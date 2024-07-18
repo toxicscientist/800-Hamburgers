@@ -91,12 +91,15 @@ Object.keys(units).forEach(e => {
     measurements.push(toTitleCase(e))
 });
 
+// background consists of images from the Noun project, specifically: Maxim Kulikov, visual language, hibernut, Bob Smith, Alogozy
+
 var comparisons = { // Unless stated otherwise, assume all values to come from the Order of Magnitude pages on Wikipedia for the unit in question; where a range is given, the median is chosen
     mass: {
         "maize pollen grains": 2.5e-10, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)
         "grains of sand": 2.5e-6,
+        "snowflakes": 3e-6, // https://hypertextbook.com/facts/2001/JudyMoy.shtml
         "houseflies": 2e-5,
-        "cubic centimeters of water": 1e-3,
+        "cm³ of water": 1e-3,
         "oranges": 0.15,
         "hamburgers": 0.24, // https://www.mcdonalds.com/gb/en-gb/help/faq/what-s-the-average-weight-in-grams-of-a-big-mac.html
         "ostrich eggs": 1.36, // https://nationalzoo.si.edu/animals/news/how-fast-ostrich-and-more-fun-facts
@@ -124,15 +127,17 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "Suns": 2e+30, // https://en.wikipedia.org/wiki/Solar_mass
         "Milky Way galaxies": 1.2e+42, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)
         "times the mass of the observable universe": 4.4506e+52,
-        "cubic parsecs of water": 2.94e+55,
+        "parsecs³ of water": 2.94e+55,
     },
     length: {
         "Hydrogen atoms": 5.3e-11, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
         "water molecules": 2.8e-8,
+        "dust particles": 3e-7, // https://hypertextbook.com/facts/2003/MarinaBolotovsky.shtml
         "bacteria": 2e-6,
         "red blood cells": 7e-6,
         "<a href='https://en.wikipedia.org/wiki/Twip'>twips</a>": 1.764e-5, // https://en.wikipedia.org/wiki/Twip
         "times the width of a human hair strand": 0.0001, // https://www.columbiatribune.com/story/lifestyle/family/2016/08/10/q-how-thin-is-human/21830395007/
+        "dollar bills stacked on top of each other": 0.00010922, // https://www.alliantcreditunion.org/money-mentor/the-dollar-bill-believe-it-or-not
         "salt grains": 0.0003, // https://scaleofuniverse.com/en/universe/grain-of-salt
         "pixels": 0.00034,
         "pinhead diameters": 0.001, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(length)
@@ -141,6 +146,8 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "peas": 0.00938, // https://www.ijpab.com/form/2018%20Volume%206,%20issue%201/IJPAB-2018-6-1-573-579.pdf
         "marbles": 0.013, // https://en.wikipedia.org/wiki/Marble_(toy)
         "times the width of an adult finger": 0.02,
+        "light picoseconds": 0.03, // https://www.kmlabs.com/news-and-events/kmlabs-picosecond-tape-measure-becomes-museum-exhibit
+        "attoparsecs": 0.03086, // https://en.wikipedia.org/wiki/List_of_humorous_units_of_measurement
         "matchsticks": 0.043, // https://scaleofuniverse.com/en/universe/matchstick
         "AA batteries": 0.05, // https://en.wikipedia.org/wiki/AA_battery
         "bananas": 0.19, // https://worldmetrics.org/average-length-of-a-banana-statistics/
@@ -169,10 +176,9 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
     volume: {
         "red blood cells": 9e-17,
         "peas": 2e-7,
-        "human ejaculations": 4e-6,
         "teaspoons": 5e-6,
         "tablespoons": 1.5e-5,
-        "cubic inches": 1.6e-5,
+        "inches³": 1.6e-5,
         "times the volume of the human urinary bladder": 4e-4,
         "wine bottles": 7.5e-4,
         "times the blood in an adult human body": 5e-3,
@@ -195,10 +201,10 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "times the power consumption of a cellphone camera light": 1,
         "times the power consumption of the human brain": 30,
         "times the basal metabolic rate of an adult human body": 100,
-        "times the electric power output of 1 m2 solar panel in full sunlight": 120,
-        "times the fusion power output of 1 cubic meter of volume of the Sun's core": 276,
+        "times the electric power output of 1m² solar panel in full sunlight": 120,
+        "times the fusion power output of 1m³ of the Sun's core": 276,
         "times the power of a microwave oven": 1.1e+3,
-        "times the power per square meter received from the Sun at the Earth's orbit": 1.366e+3,
+        "times the power per m² received from the Sun at the Earth's orbit": 1.366e+3,
         "times the average power consumption per person worldwide": 2.4e+3,
         "times the average power consumption per person in the United States": 1e+4,
         "times the maximum power output of a large 18-wheeler truck engine": 4.5e+5,

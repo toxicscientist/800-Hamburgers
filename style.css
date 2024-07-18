@@ -1,8 +1,8 @@
 *{
     font-family: monospace;
     font-size: large;
-    background-color: #ffc21c;
     transition-duration: 1s;
+    color: #eee
 }
 
 #imperial, #values{
@@ -31,7 +31,24 @@ hr {
 }
 
 input, select{
-    background-color: #ffffff88;
+    background-color: #ffffff33;
     outline: none;
     border: none;
+}
+
+option{
+    color: #000;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url('./800\ hamburgers\ background.png');
+    background-color: #20252c;
+    background-blend-mode: soft-light;
+    background-size: 400px;
+    background-repeat: repeat;
 }
