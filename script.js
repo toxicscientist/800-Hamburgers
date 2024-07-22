@@ -33,8 +33,8 @@ var normalisations = {
     volume: {
         cubic_meters: 1,
         litres: 0.001,
-        us_gallons: 0.004,
-        us_pints: 0.0005,
+        gallons: 0.004,
+        pints: 0.0005,
         cubic_centimeters: 0.000001
     },
     // to Watts
@@ -100,6 +100,7 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "snowflakes": 3e-6, // https://hypertextbook.com/facts/2001/JudyMoy.shtml
         "houseflies": 2e-5,
         "cm³ of water": 1e-3,
+        "carats": 2e-3,
         "oranges": 0.15,
         "hamburgers": 0.24, // https://www.mcdonalds.com/gb/en-gb/help/faq/what-s-the-average-weight-in-grams-of-a-big-mac.html
         "ostrich eggs": 1.36, // https://nationalzoo.si.edu/animals/news/how-fast-ostrich-and-more-fun-facts
@@ -153,6 +154,7 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "bananas": 0.19, // https://worldmetrics.org/average-length-of-a-banana-statistics/
         "washing machines": 0.8,
         "adult male humans": 1.7526, // https://www.medicinenet.com/height_men/article.htm
+        "Shaqs": 2.16, // https://en.wikipedia.org/wiki/Shaquille_O%27Neal
         "adult male crocodiles": 3.4, // https://nationalzoo.si.edu/animals/american-alligator
         "t-rexes": 12.35, // https://en.wikipedia.org/wiki/Tyrannosaurus
         "blue whales": 30, // https://en.wikipedia.org/wiki/Blue_whale
@@ -178,7 +180,7 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "peas": 2e-7,
         "teaspoons": 5e-6,
         "tablespoons": 1.5e-5,
-        "inches³": 1.6e-5,
+        "in³": 1.6e-5,
         "times the volume of the human urinary bladder": 4e-4,
         "wine bottles": 7.5e-4,
         "times the blood in an adult human body": 5e-3,
