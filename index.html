@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>800 Hamburgers</title><!---192 kilograms--->
     <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./burger-solid.png">
 </head>
 <body>
+    <h1>800 Hamburgers</h1>
     <div id="values">
         <select id="measurement" onchange="measurementChanged()"></select>
-        <p />
         <input type="number" id="magnitude" oninput="updateComparison()"></input>
         <select id="unit" onchange="updateComparison()"></select>
     </div>
     <hr>
     <div id="imperial"></div>
+    <footer id="footer" style="font-family: monospace;">
+        Made by <a href="https://toxicscientist.github.io/" style="font-family: monospace;">Nerdopedia</a> - Icon from <a href="https://fontawesome.com/icons/burger" style="font-family: monospace;">Font Awesome</a>
+    </footer>
 </body>
 <script defer="true" src="./script.js"></script>
 </html>

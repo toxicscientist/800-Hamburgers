@@ -187,10 +187,10 @@ var comparisons = { // Unless stated otherwise, assume all values to come from t
         "times the total volume of male adult human lungs": 6e-3,
         "times the volume of a human body": 7.1e-2,
         "oil barrels": 1.59e-1,
-        "butts(an old unit for beer and wine)": 4.8e-1,
+        "<abbr title='Old unit for beer and wine'>butts</abbr>": 4.8e-1,
         "Olympic-sized swimming pools": 2.5e+3,
         "times the gas in the Hindenburg zeppelin": 2.12e+5,
-        "sydharbs — Volume of Sydney Harbour, Australia": 5e+8,
+        "<abbr title='Volume of Sydney Harbour, Australia'>sydharbs</abbr>": 5e+8,
         "times the volume of crude oil consumed by the world in a year": 5e+9,
         "times the volume of the Mediterranean Sea": 3.7e+15,
         "times the volume of the Moon": 2.2e+19,
@@ -358,7 +358,7 @@ function updateComparison(){
     }
 }
 
-document.getElementById('magnitude').value = Math.floor(Math.random() * 10)
-document.getElementById('measurement').value = measurements[Math.floor(Math.random() * measurements.length)]
+document.getElementById('magnitude').value = Math.ceil(Math.random() * 10)
+document.getElementById('measurement').value = measurements[Math.floor(Math.random() * 3)]
 measurementChanged()
 updateComparison()
