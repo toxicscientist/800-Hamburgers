@@ -91,8 +91,6 @@ Object.keys(units).forEach(e => {
     measurements.push(toTitleCase(e))
 });
 
-// background consists of images from the Noun project, specifically: Maxim Kulikov, visual language, hibernut, Bob Smith, Alogozy
-
 var comparisons = { // Unless stated otherwise, assume all values to come from the Order of Magnitude pages on Wikipedia for the unit in question; where a range is given, the median is chosen
     mass: {
         "maize pollen grains": 2.5e-10, // https://en.wikipedia.org/wiki/Orders_of_magnitude_(mass)
